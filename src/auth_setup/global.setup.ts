@@ -8,6 +8,9 @@ async function globalSetup() {
     await page.goto("https://support.glitch.com/");
     await page.locator("button[class*='btn-icon-text'] span").click();
     await page.click('button:has-text("Log in with GitHub")')
+    if (!process.env.GLITCH_USERNAME || !process.env.GLITCH_PASSWORD) {
+        throw new Error('Values are empty');
+    }
     await page.fill('input#login_field', process.env.GLITCH_USERNAME || '');
     await page.fill('input#password', process.env.GLITCH_PASSWORD || '');
     await page.locator("input[type='submit']").click();
