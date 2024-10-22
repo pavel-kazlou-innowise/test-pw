@@ -30,6 +30,14 @@ jobs:
           echo "GLITCH_USERNAME=${{ secrets.GLITCH_USERNAME }}" >> $GITHUB_ENV
           echo "GLITCH_PASSWORD=${{ secrets.GLITCH_PASSWORD }}" >> $GITHUB_ENV
 
+      - name: Log environment variables for debugging
+        run: |
+          echo "GLITCH_USERNAME is set to: ${GLITCH_USERNAME:0:4}****"
+          echo "GLITCH_PASSWORD is set to: ${GLITCH_PASSWORD:0:4}****"
+        env:
+          GLITCH_USERNAME: ${{ secrets.GLITCH_USERNAME }}
+          GLITCH_PASSWORD: ${{ secrets.GLITCH_PASSWORD }}
+
       - name: Run Playwright Tests
         env:
           GLITCH_USERNAME: ${{ secrets.GLITCH_USERNAME }}
