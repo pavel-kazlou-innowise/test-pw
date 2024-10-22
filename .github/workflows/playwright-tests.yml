@@ -42,7 +42,7 @@ jobs:
         env:
           GLITCH_USERNAME: ${{ secrets.GLITCH_USERNAME }}
           GLITCH_PASSWORD: ${{ secrets.GLITCH_PASSWORD }}
-        run: npx playwright test
+        run: GLITCH_USERNAME=secrets.GLITCH_USERNAME GLITCH_PASSWORD=secrets.GLITCH_PASSWORD npx playwright test
 
       - name: Upload Playwright Report
         if: failure()
