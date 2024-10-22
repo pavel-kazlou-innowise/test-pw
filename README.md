@@ -28,7 +28,8 @@ You can set your credentials in one of the following ways:
 2. **Using a .env file:**
 Create a .env file in the root of the project and add:
    ```bash
-   GLITCH_USERNAME=your_github_username GLITCH_PASSWORD=your_github_password npx playwright test
+   GLITCH_USERNAME=your_github_username 
+   GLITCH_PASSWORD=your_github_password
    ```
 Then run:
    ```bash
