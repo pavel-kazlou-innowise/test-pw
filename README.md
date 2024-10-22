@@ -9,8 +9,7 @@ Login with Github using Playwright
 ### Step 1: Clone the Repository
 
 ```bash
-git clone <your-repository-url>
-cd <directory-name>
+git clone https://github.com/pavel-kazlou-innowise/test-pw.git
 ```
 ### Step 2: Install Dependencies
 
